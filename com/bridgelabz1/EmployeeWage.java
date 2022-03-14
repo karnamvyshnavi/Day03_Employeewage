@@ -8,16 +8,20 @@ public class EmployeeWage {
         //declaration
         int isPresent = 1;
         int isAbsent = 0;
+        int wagePerHour= 20;
+        int fullTime= 8;
+        int empwage = 0;
+        int Attendance = 0;
 
         //method
         int isPresence = (int) (Math.random() * 2);
         //System.out.println(isPresence);
 
         if (isPresence == isPresent) {
-            System.out.println("Employee is present");
-        } else {
-            System.out.println("Employee is absent");
-
+            Attendance = 1;
         }
+
+        empwage = Attendance * wagePerHour*fullTime;
+        System.out.println("Employee wage : "+empwage);
     }
 }
