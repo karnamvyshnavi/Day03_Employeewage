@@ -1,9 +1,8 @@
 package com.bridgelabz1;
 
-import java.util.Random;
-
 public class EmployeeWage {
     public static void main(String[] args) {
+
         System.out.println("Welcome to Employee Wage Computation");
         //declaration
         int isPresent = 1;
@@ -17,16 +16,19 @@ public class EmployeeWage {
 
         //method
         int isPresence = (int) (Math.random() * 10) % 3;
-        //System.out.println(isPresence);
 
-        if (isPresence == isPresent) {
-            empwage =  wagePerHour * fullTime;
-        }else if(isPresence == isPartTime){
-
-            empwage = wagePerHour * partTime;
-        }else{
-            empwage= 0;
+        switch(isPresence){
+            case 1:
+                empwage = wagePerHour * fullTime;
+                break;
+            case 2:
+                empwage = wagePerHour * partTime;
+                break;
+            case 0:
+                empwage = 0;
+                break;
         }
+
         System.out.println("Employee wage : "+empwage);
     }
 }
