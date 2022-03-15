@@ -11,24 +11,24 @@ public class EmployeeWage {
         int wagePerHour= 20;
         int fullTime= 8;
         int partTime=4;
-        int empwage = 0;
-        int Attendance = 0;
+        int empWage = 0;
+        int totalWorkingDays= 20;
+        int  totalEmployeeWage = 0;
 
         //method
         int isPresence = (int) (Math.random() * 10) % 3;
 
-        switch(isPresence){
-            case 1:
-                empwage = wagePerHour * fullTime;
-                break;
-            case 2:
-                empwage = wagePerHour * partTime;
-                break;
-            case 0:
-                empwage = 0;
-                break;
+        for( int i=1;i<totalWorkingDays;i++) {
+            if (isPresence == isPresent) {
+                empWage = fullTime + wagePerHour;
+            } else if (isPresence == isPartTime) {
+                empWage = partTime + wagePerHour;
+            } else {
+                empWage = 0;
+            }
+        totalEmployeeWage = totalEmployeeWage + empWage;
         }
 
-        System.out.println("Employee wage : "+empwage);
+        System.out.println("Employee wage for a month is : "+totalEmployeeWage);
     }
 }
