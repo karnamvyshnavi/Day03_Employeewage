@@ -1,34 +1,32 @@
-package com.bridgelabz1;
-
-public class EmployeeWage {
-    public static void main(String[] args) {
-
-        System.out.println("Welcome to Employee Wage Computation");
-        //declaration
-        int isPresent = 1;
-        int isPartTime=2;
-        int isAbsent = 0;
-        int wagePerHour= 20;
-        int fullTime= 8;
-        int partTime=4;
-        int empWage = 0;
-        int totalWorkingDays= 20;
-        int  totalEmployeeWage = 0;
-
-        //method
-        int isPresence = (int) (Math.random() * 10) % 3;
-
-        for( int i=1;i<totalWorkingDays;i++) {
-            if (isPresence == isPresent) {
-                empWage = fullTime + wagePerHour;
-            } else if (isPresence == isPartTime) {
-                empWage = partTime + wagePerHour;
-            } else {
-                empWage = 0;
+public class EmployeeWage{
+    public static final int IS_PART_TIME = 1;
+    public static final int IS_FULL_TIME = 2;
+    public static final int Wage_per_hour = 20;
+    public static final int Total_Working_days = 20;
+    public static final int Maximum_work_hours = 100;
+    public static void main (String[] args){
+        System.out.println(" Welcome To Emloyee Wage");
+        int Emp_wage_hour = 0;
+        int Monthly_wage = 0;
+        int Working_days = 0, total_emp_hours = 0;
+        while ( Working_days < Total_Working_days && total_emp_hours <= Maximum_work_hours){
+            Working_days++;
+            int empCheck = (int) Math.floor(Math.random()*10)%3;
+            switch (empCheck) {
+                case IS_FULL_TIME:
+                    Emp_wage_hour = 8 ;
+                    break;
+                case IS_PART_TIME:
+                    Emp_wage_hour = 4;
+                    break;
+                default:
+                    Emp_wage_hour = 0;
             }
-        totalEmployeeWage = totalEmployeeWage + empWage;
+            total_emp_hours += Emp_wage_hour;
+            int Emp = Emp_wage_hour * Wage_per_hour;
+            System.out.println("Wage of a employee at day "+Working_days+"\t"+ Emp + "\t" + "Work time :"+" "+Emp_wage_hour);
+            Monthly_wage += Emp;
         }
-
-        System.out.println("Employee wage for a month is : "+totalEmployeeWage);
+        System.out.println("Monthly Wages of an Employee : " + Monthly_wage+"\n"+"Monthly Working Hours of an employee : "+total_emp_hours+"hours");
     }
 }
